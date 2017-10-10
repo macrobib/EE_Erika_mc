@@ -1,0 +1,912 @@
+******************************************************************************
+                  TI ARM Linker PC v16.9.4                     
+******************************************************************************
+>> Linked Tue Oct 10 07:48:33 2017
+
+OUTPUT FILE NAME:   <_tms570.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 000014a8
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  VECTORS               00000000   00000020  00000020  00000000     X
+  FLASH0                00000020   0007ffe0  00006d64  0007927c  R  X
+  FLASH1                00080000   00080000  00000000  00080000  R  X
+  FLASH2                00100000   00080000  00000000  00080000  R  X
+  FLASH3                00180000   00080000  00000000  00080000  R  X
+  STACKS                08000000   00006000  00000000  00006000  RW  
+  RAM                   08006000   00022000  00000285  00021d7b  RW  
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00006d88   00006d88    r-x
+  00000000    00000000    00000020   00000020    r-x .intvecs
+  00000020    00000020    00006910   00006910    r-x .text
+  00006930    00006930    000003fc   000003fc    r-- .const
+  00006d30    00006d30    00000058   00000058    r-- .cinit
+08006000    08006000    00000288   00000000    rw-
+  08006000    08006000    00000165   00000000    rw- .bss
+  08006168    08006168    00000120   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000020     
+                  00000000    00000020     sys_intvecs.o (.intvecs)
+
+.text      0    00000020    00006910     
+                  00000020    00000568     libee.a : pinmux.o (.text:muxInit)
+                  00000588    000003f4             : sys_selftest.o (.text:errata_PBIST_4)
+                  0000097c    0000034c             : sys_core.o (.text)
+                  00000cc8    000002cc             : sys_vim.o (.text:vimParityErrorHandler)
+                  00000f94    00000298             : sys_selftest.o (.text:checkRAMECC)
+                  0000122c    0000027c             : ee_altick.o (.text:EE_as_handle_schedule_table)
+                  000014a8    0000027c             : sys_startup.o (.text:_c_int00)
+                  00001724    00000268             : ee_irqDispatch_c.o (.text:C_irqDispatch)
+                  0000198c    00000238             : sys_selftest.o (.text:pbistSelfCheck)
+                  00001bc4    000001f0             : ee_as_schedule_tables.o (.text:EE_as_StartScheduleTableRel)
+                  00001db4    000001e4             : ee_as_schedule_tables.o (.text:EE_as_StartScheduleTableAbs)
+                  00001f98    000001a0             : ee_thendin.o (.text:EE_thread_end_instance)
+                  00002138    00000190             : ee_altick.o (.text:EE_oo_IncrementCounterImplementation)
+                  000022c8    00000180     rtsv7R4_A_be_v3D16_eabi.lib : memcpy32.obj (.text)
+                  00002448    00000158     libee.a : esm.o (.text:esmInit)
+                  000025a0    00000140             : system.o (.text:mapClocks)
+                  000026e0    00000130             : ee_startos.o (.text:EE_oo_StartOS)
+                  00002810    0000011c             : ee_as_timing_prot.o (.text:EE_as_tp_active_update_budgets)
+                  0000292c    0000011c             : ee_altick.o (.text:EE_oo_counter_object_insert)
+                  00002a48    00000118             : ee_altick.o (.text:EE_oo_handle_action_event)
+                  00002b60    00000114             : esm.o (.text:esmHighInterrupt)
+                  00002c74    00000110             : sys_vim.o (.text:vimInit)
+                  00002d84    0000010c             : sys_selftest.o (.text:mibspi1ParityCheck)
+                  00002e90    0000010c             : sys_selftest.o (.text:mibspi3ParityCheck)
+                  00002f9c    0000010c             : sys_selftest.o (.text:mibspi5ParityCheck)
+                  000030a8    00000108             : ee_as_prot_error.o (.text:EE_as_handle_protection_error)
+                  000031b0    000000fc             : ee_as_timing_prot.o (.text:EE_as_tp_active_eval_first_expiring)
+                  000032ac    000000f8             : sys_selftest.o (.text:het2ParityCheck)
+                  000033a4    000000e8             : ee_as_timing_prot.o (.text:EE_as_tp_time_frames_reclaim)
+                  0000348c    000000e8             : sys_selftest.o (.text:pbistRun)
+                  00003574    000000e0             : sys_pmu.o (.text)
+                  00003654    000000dc             : sys_selftest.o (.text:can1ParityCheck)
+                  00003730    000000dc             : sys_selftest.o (.text:can2ParityCheck)
+                  0000380c    000000dc             : sys_selftest.o (.text:can3ParityCheck)
+                  000038e8    000000d4             : ee_as_timing_prot.o (.text:EE_as_tp_handle_interarrival)
+                  000039bc    000000cc             : ee_irqendin.o (.text:EE_IRQ_end_instance)
+                  00003a88    000000cc             : ee_as_timing_prot.o (.text:EE_as_tp_active_start_on_TASK_stacking)
+                  00003b54    000000cc             : system.o (.text:systemInit)
+                  00003c20    000000c0             : sys_selftest.o (.text:dmaParityCheck)
+                  00003ce0    000000c0             : sys_selftest.o (.text:efcStuckZeroTest)
+                  00003da0    000000c0             : sys_selftest.o (.text:htu1ParityCheck)
+                  00003e60    000000c0             : sys_selftest.o (.text:htu2ParityCheck)
+                  00003f20    000000c0             : sys_selftest.o (.text:vimParityCheck)
+                  00003fe0    000000bc             : ee_rq_inser.o (.text:EE_rq_insert)
+                  0000409c    000000bc             : dabort.o (.text)
+                  00004158    000000b8             : sys_selftest.o (.text:adc1ParityCheck)
+                  00004210    000000b8             : sys_selftest.o (.text:adc2ParityCheck)
+                  000042c8    000000b4             : sys_selftest.o (.text:disableParity)
+                  0000437c    000000b4             : sys_selftest.o (.text:enableParity)
+                  00004430    000000b0             : ee_as_schedule_tables.o (.text:EE_oo_handle_abs_counter_object_insertion)
+                  000044e0    000000b0             : sys_selftest.o (.text:het1ParityCheck)
+                  00004590    000000b0     rtsv7R4_A_be_v3D16_eabi.lib : memset32.obj (.text)
+                  00004640    000000ac     libee.a : ee_altick.o (.text:EE_oo_handle_action_task)
+                  000046ec    000000ac             : sys_selftest.o (.text:checkefcSelfTest)
+                  00004798    000000ac             : ee_ccs_multi_context.o (.text)
+                  00004844    000000a8             : ee_startos.o (.text:EE_oo_autostart_schedule_tables)
+                  000048ec    000000a8     rtsv7R4_A_be_v3D16_eabi.lib : autoinit.obj (.text)
+                  00004994    00000098     libee.a : rti.o (.text:rtiGetCurrentTick)
+                  00004a2c    00000090     rtsv7R4_A_be_v3D16_eabi.lib : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  00004abc    00000090                                 : exit.obj (.text)
+                  00004b4c    0000008c     libee.a : sys_selftest.o (.text:efcCheck)
+                  00004bd8    0000008c             : ee_ccs_oo.o (.text)
+                  00004c64    00000088             : ee_as_timing_prot.o (.text:EE_as_tp_active_set)
+                  00004cec    00000088             : ee_shtdown.o (.text:EE_as_tp_active_set)
+                  00004d74    00000084     rtsv7R4_A_be_v3D16_eabi.lib : cpy_tbl.obj (.text)
+                  00004df8    00000078     libee.a : ee_as_timing_prot.o (.text:EE_as_tp_update_reclamation_budget)
+                  00004e70    00000074             : sys_selftest.o (.text:pbistFail)
+                  00004ee4    0000006c             : ee_as_timing_prot.o (.text:EE_as_tp_active_handle_budget_expired)
+                  00004f50    0000006c             : ee_irqendin.o (.text:EE_as_tp_active_reset_budgets)
+                  00004fbc    0000006c             : ee_thendin.o (.text:EE_as_tp_active_reset_budgets)
+                  00005028    0000006c             : ee_altick.o (.text:EE_oo_handle_action)
+                  00005094    0000006c     code_as_impl.o (.text:EE_std_need_context_change)
+                  00005100    0000006c     libee.a : ee_system_timer.o (.text:EE_std_need_context_change)
+                  0000516c    0000006c             : system.o (.text:setupPLL)
+                  000051d8    00000068             : ee_altick.o (.text:EE_os_notify_error)
+                  00005240    00000068             : ee_as_schedule_tables.o (.text:EE_os_notify_error)
+                  000052a8    00000064             : system.o (.text:periphInit)
+                  0000530c    0000005c             : ee_rq_exchg.o (.text:EE_rq2stk_exchange)
+                  00005368    0000005c             : sys_selftest.o (.text:pbistPortTestStatus)
+                  000053c4    00000058             : ee_startos.o (.text:EE_oo_autostart_tasks)
+                  0000541c    00000058             : ee_irqDispatch_asm.o (.text)
+                  00005474    00000054             : ee_as_timing_prot.o (.text:EE_as_tp_active_minimum_against_reclamation)
+                  000054c8    00000054             : system.o (.text:setupFlash)
+                  0000551c    00000050             : ee_as_timing_prot.o (.text:EE_as_tp_active_update_budgets_and_restart_impl)
+                  0000556c    00000050             : system.o (.text:trimLPO)
+                  000055bc    0000004c             : ee_as_timing_prot.o (.text:EE_as_tp_active_start_idle)
+                  00005608    0000004c             : ee_irqendin.o (.text:EE_as_tp_stop_budget)
+                  00005654    0000004c             : ee_thendin.o (.text:EE_as_tp_stop_budget)
+                  000056a0    0000004c             : ee_altick.o (.text:EE_oo_handle_rel_counter_object_insertion)
+                  000056ec    0000004c             : ee_as_schedule_tables.o (.text:EE_oo_handle_rel_counter_object_insertion)
+                  00005738    0000004c             : ee_startos.o (.text:EE_oo_notify_error_StartOS)
+                  00005784    0000004c             : ee_altick.o (.text:EE_oo_notify_error_service)
+                  000057d0    0000004c             : ee_irqendin.o (.text:EE_oo_notify_error_service)
+                  0000581c    0000004c             : ee_tnterm.o (.text:EE_oo_notify_error_service)
+                  00005868    0000004c             : ee_altick.o (.text:EE_os_fill_error_data)
+                  000058b4    0000004c             : ee_as_schedule_tables.o (.text:EE_os_fill_error_data)
+                  00005900    00000048             : ee_irqendin.o (.text:EE_IRQ_run_next_task)
+                  00005948    00000048             : ee_as_timing_prot.o (.text:EE_as_tp_RAM_first_expiring_against_reclamation)
+                  00005990    00000048             : ee_as_timing_prot.o (.text:EE_as_tp_active_set_from_TASK)
+                  000059d8    00000048             : ee_thendin.o (.text:EE_thread_endcycle_next)
+                  00005a20    00000044             : ee_startos.o (.text:get_schedule_table_autostart_data)
+                  00005a64    00000044             : sys_selftest.o (.text:memoryInit)
+                  00005aa8    0000003c             : ee_system_timer.o (.text:EE_systick_set_period)
+                  00005ae4    0000003c             : ee_startos.o (.text:compute_task_tid)
+                  00005b20    00000038             : ee_irqendin.o (.text:EE_IRQ_end_post_stub)
+                  00005b58    00000038             : ee_altick.o (.text:EE_oo_IncrementCounterHardware)
+                  00005b90    00000038             : ee_altick.o (.text:EE_oo_task_in_ready_queue)
+                  00005bc8    00000038             : ee_startos.o (.text:EE_oo_task_in_ready_queue)
+                  00005c00    00000038             : sys_selftest.o (.text:efcSelfTest)
+                  00005c38    00000038             : sys_selftest.o (.text:pbistIsTestPassed)
+                  00005c70    00000034             : ee_system_timer.o (.text:EE_cortex_system_timer_handler)
+                  00005ca4    00000034             : sys_selftest.o (.text:pbistStop)
+                  00005cd8    00000034     code_as_impl.o (.text:rtiCompare0Interrupt)
+                  00005d0c    00000030     libee.a : ee_startos.o (.text:EE_oo_fill_error_data_StartOS)
+                  00005d3c    00000030     code_as_impl.o (.text:EE_std_after_IRQ_schedule)
+                  00005d6c    00000030     libee.a : ee_system_timer.o (.text:EE_std_after_IRQ_schedule)
+                  00005d9c    00000030             : rti.o (.text:rtiEnableNotification)
+                  00005dcc    00000030             : rti.o (.text:rtiStartCounter)
+                  00005dfc    0000002c             : ee_shtdown.o (.text:EE_oo_ShutdownOS_internal)
+                  00005e28    0000002c             : sys_selftest.o (.text:pbistIsTestCompleted)
+                  00005e54    00000028             : ee_irqendin.o (.text:EE_hal_endcycle_stacked)
+                  00005e7c    00000028             : ee_thendin.o (.text:EE_hal_endcycle_stacked)
+                  00005ea4    00000028             : ee_startos.o (.text:EE_oo_autostart_os)
+                  00005ecc    00000028             : ee_altick.o (.text:EE_oo_set_th_status_ready)
+                  00005ef4    00000028             : ee_startos.o (.text:EE_oo_set_th_status_ready)
+                  00005f1c    00000028             : ee_thendin.o (.text:EE_oo_set_th_status_ready)
+                  00005f44    00000028             : ee_context.o (.text:EE_std_run_task_code)
+                  00005f6c    00000028             : ee_tnterm.o (.text:EE_thread_not_terminated)
+                  00005f94    00000028             : rti.o (.text:rtiSetPeriod)
+                  00005fbc    00000024             : ee_altick.o (.text:EE_cortex_rx_resumeIRQ)
+                  00005fe0    00000024             : ee_as_schedule_tables.o (.text:EE_cortex_rx_resumeIRQ)
+                  00006004    00000024             : ee_startos.o (.text:EE_cortex_rx_resumeIRQ)
+                  00006028    00000024             : ee_as_timing_prot.o (.text:EE_hal_swfrt_eval_elapsed_time)
+                  0000604c    00000024             : ee_altick.o (.text:EE_oo_handle_action_callback)
+                  00006070    00000024             : ee_altick.o (.text:EE_oo_reset_th_event_active)
+                  00006094    00000024             : ee_startos.o (.text:EE_oo_reset_th_event_active)
+                  000060b8    00000024             : ee_thendin.o (.text:EE_oo_reset_th_event_active)
+                  000060dc    00000024     code_as_impl.o (.text:EE_std_tid_is_marked_stacked)
+                  00006100    00000024     libee.a : ee_system_timer.o (.text:EE_std_tid_is_marked_stacked)
+                  00006124    00000024             : ee_thendin.o (.text:EE_stk_getfirst)
+                  00006148    00000024     rtsv7R4_A_be_v3D16_eabi.lib : _lock.obj (.text)
+                  0000616c    00000020     libee.a : ee_as_schedule_tables.o (.text:EE_as_tp_active_pause_and_update_budgets)
+                  0000618c    00000020             : ee_as_schedule_tables.o (.text:EE_as_tp_active_update_budgets_and_restart)
+                  000061ac    00000020             : ee_irqendin.o (.text:EE_hal_endcycle_ready)
+                  000061cc    00000020             : ee_thendin.o (.text:EE_hal_endcycle_ready)
+                  000061ec    00000020     code_as_impl.o (.text:EE_is_inside_ISR_call)
+                  0000620c    00000020     libee.a : ee_system_timer.o (.text:EE_is_inside_ISR_call)
+                  0000622c    00000020             : ee_irqendin.o (.text:EE_oo_check_disableint_error)
+                  0000624c    00000020             : ee_altick.o (.text:EE_oo_set_error_serviceid)
+                  0000626c    00000020             : ee_irqendin.o (.text:EE_oo_set_error_serviceid)
+                  0000628c    00000020             : ee_tnterm.o (.text:EE_oo_set_error_serviceid)
+                  000062ac    0000001c             : ee_as_schedule_tables.o (.text:EE_ORTI_set_service_in)
+                  000062c8    0000001c             : ee_startos.o (.text:EE_ORTI_set_service_in)
+                  000062e4    0000001c             : ee_system_timer.o (.text:EE_cortex_rx_initialize_system_timer)
+                  00006300    0000001c             : notification.o (.text:memoryPort0TestFailNotification)
+                  0000631c    00000018             : ee_altick.o (.text:EE_cortex_rx_get_IRQ_enabled)
+                  00006334    00000018             : ee_as_schedule_tables.o (.text:EE_cortex_rx_get_IRQ_enabled)
+                  0000634c    00000018             : ee_startos.o (.text:EE_cortex_rx_get_IRQ_enabled)
+                  00006364    00000018             : ee_altick.o (.text:EE_cortex_rx_suspendIRQ)
+                  0000637c    00000018             : ee_as_schedule_tables.o (.text:EE_cortex_rx_suspendIRQ)
+                  00006394    00000018             : ee_startos.o (.text:EE_cortex_rx_suspendIRQ)
+                  000063ac    00000018     code_as_impl.o (.text:EE_decrement_IRQ_nesting_level)
+                  000063c4    00000018     libee.a : ee_system_timer.o (.text:EE_decrement_IRQ_nesting_level)
+                  000063dc    00000018     code_as_impl.o (.text:EE_increment_IRQ_nesting_level)
+                  000063f4    00000018     libee.a : ee_system_timer.o (.text:EE_increment_IRQ_nesting_level)
+                  0000640c    00000018             : ee_irqendin.o (.text:EE_std_mark_tid_stacked)
+                  00006424    00000018             : ee_thendin.o (.text:EE_std_mark_tid_stacked)
+                  0000643c    00000014             : ee_as_schedule_tables.o (.text:EE_ORTI_set_service_out)
+                  00006450    00000014             : ee_shtdown.o (.text:EE_ORTI_set_service_out)
+                  00006464    00000014             : ee_startos.o (.text:EE_ORTI_set_service_out)
+                  00006478    00000014             : ee_thendin.o (.text:EE_ORTI_set_th_priority)
+                  0000648c    00000014             : ee_as_timing_prot.o (.text:EE_as_tp_active_pause_and_update_budgets_impl)
+                  000064a0    00000014             : ee_startos.o (.text:EE_cpu_startos)
+                  000064b4    00000014             : ee_altick.o (.text:EE_hal_end_nested_primitive)
+                  000064c8    00000014             : ee_as_schedule_tables.o (.text:EE_hal_end_nested_primitive)
+                  000064dc    00000014             : ee_startos.o (.text:EE_hal_end_nested_primitive)
+                  000064f0    00000014             : ee_startos.o (.text:EE_hal_ready2stacked)
+                  00006504    00000014             : ee_as_timing_prot.o (.text:EE_hal_swfrt_get_current_time)
+                  00006518    00000014             : ee_as_timing_prot.o (.text:EE_hal_tp_set_expiration)
+                  0000652c    00000014             : ee_altick.o (.text:EE_oo_call_ErrorHook)
+                  00006540    00000014             : ee_as_schedule_tables.o (.text:EE_oo_call_ErrorHook)
+                  00006554    00000014             : ee_irqendin.o (.text:EE_oo_call_ErrorHook)
+                  00006568    00000014             : ee_startos.o (.text:EE_oo_call_ErrorHook)
+                  0000657c    00000014             : ee_tnterm.o (.text:EE_oo_call_ErrorHook)
+                  00006590    00000014             : ee_shtdown.o (.text:EE_oo_shutdown)
+                  000065a4    00000014             : ee_startos.o (.text:EE_oo_start_os)
+                  000065b8    00000014             : ee_tstub.o (.text:EE_oo_thread_stub)
+                  000065cc    00000014     code_as_impl.o (.text:ProtectionHook)
+                  000065e0    00000014     rtsv7R4_A_be_v3D16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  000065f4    00000014     code_as_impl.o (.text:main)
+                  00006608    00000010     libee.a : ee_as_schedule_tables.o (.text:EE_ORTI_set_service)
+                  00006618    00000010             : ee_shtdown.o (.text:EE_ORTI_set_service)
+                  00006628    00000010             : ee_startos.o (.text:EE_ORTI_set_service)
+                  00006638    00000010             : ee_irqendin.o (.text:EE_ORTI_set_th_eq_dispatch_prio)
+                  00006648    00000010             : ee_startos.o (.text:EE_ORTI_set_th_eq_dispatch_prio)
+                  00006658    00000010             : ee_thendin.o (.text:EE_ORTI_set_th_eq_dispatch_prio)
+                  00006668    00000010             : ee_as_prot_error.o (.text:EE_as_set_execution_context)
+                  00006678    00000010             : ee_irqendin.o (.text:EE_as_set_execution_context)
+                  00006688    00000010             : ee_startos.o (.text:EE_as_set_execution_context)
+                  00006698    00000010             : ee_thendin.o (.text:EE_as_set_execution_context)
+                  000066a8    00000010             : ee_tstub.o (.text:EE_as_set_execution_context)
+                  000066b8    00000010             : ee_as_prot_error.o (.text:EE_hal_get_IRQ_nesting_level)
+                  000066c8    00000010             : ee_irqendin.o (.text:EE_oo_call_PreTaskHook)
+                  000066d8    00000010             : ee_thendin.o (.text:EE_oo_call_PreTaskHook)
+                  000066e8    00000010             : ee_tstub.o (.text:EE_oo_call_PreTaskHook)
+                  000066f8    00000010             : ee_shtdown.o (.text:EE_oo_call_ShutdownHook)
+                  00006708    00000010             : ee_irqendin.o (.text:EE_rq_queryfirst)
+                  00006718    00000010             : ee_startos.o (.text:EE_rq_queryfirst)
+                  00006728    00000010             : ee_thendin.o (.text:EE_rq_queryfirst)
+                  00006738    00000010             : ee_as_prot_error.o (.text:EE_stk_queryfirst)
+                  00006748    00000010             : ee_irqendin.o (.text:EE_stk_queryfirst)
+                  00006758    00000010             : ee_thendin.o (.text:EE_stk_queryfirst)
+                  00006768    00000010             : ee_tnterm.o (.text:EE_stk_queryfirst)
+                  00006778    00000010             : ee_tstub.o (.text:EE_stk_queryfirst)
+                  00006788    00000010             : ee_system_timer.o (.text:EE_systick_enable_int)
+                  00006798    00000010             : ee_system_timer.o (.text:EE_systick_start)
+                  000067a8    00000010     code_as_impl.o (.text:ErrorHook)
+                  000067b8    00000010     libee.a : ee_system_timer.o (.text:ISR2_EE_cortex_system_timer_handler)
+                  000067c8    00000010     rtsv7R4_A_be_v3D16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  000067d8    00000010     libee.a : notification.o (.text:esmGroup1Notification)
+                  000067e8    00000010             : notification.o (.text:esmGroup2Notification)
+                  000067f8    00000010             : sys_selftest.o (.text:selftestFailNotification)
+                  00006808    0000000c             : ee_altick.o (.text:EE_hal_begin_nested_primitive)
+                  00006814    0000000c             : ee_as_schedule_tables.o (.text:EE_hal_begin_nested_primitive)
+                  00006820    0000000c             : ee_startos.o (.text:EE_hal_begin_nested_primitive)
+                  0000682c    0000000c             : ee_context.o (.text:EE_hal_disableIRQ)
+                  00006838    0000000c             : ee_tnterm.o (.text:EE_hal_disableIRQ)
+                  00006844    0000000c             : ee_context.o (.text:EE_hal_enableIRQ)
+                  00006850    0000000c             : ee_startos.o (.text:EE_hal_enableIRQ)
+                  0000685c    0000000c     code_as_impl.o (.text:EE_std_end_IRQ_post_stub)
+                  00006868    0000000c     libee.a : ee_system_timer.o (.text:EE_std_end_IRQ_post_stub)
+                  00006874    0000000c     code_as_impl.o (.text:ISR2_rtiCompare0Interrupt)
+                  00006880    00000008     code_as_impl.o (.text:EE_cortex_rx_disableIRQ)
+                  00006888    00000008     libee.a : ee_altick.o (.text:EE_cortex_rx_disableIRQ)
+                  00006890    00000008             : ee_as_schedule_tables.o (.text:EE_cortex_rx_disableIRQ)
+                  00006898    00000008             : ee_context.o (.text:EE_cortex_rx_disableIRQ)
+                  000068a0    00000008             : ee_startos.o (.text:EE_cortex_rx_disableIRQ)
+                  000068a8    00000008             : ee_system_timer.o (.text:EE_cortex_rx_disableIRQ)
+                  000068b0    00000008             : ee_tnterm.o (.text:EE_cortex_rx_disableIRQ)
+                  000068b8    00000008     code_as_impl.o (.text:EE_cortex_rx_enableIRQ)
+                  000068c0    00000008     libee.a : ee_altick.o (.text:EE_cortex_rx_enableIRQ)
+                  000068c8    00000008             : ee_as_schedule_tables.o (.text:EE_cortex_rx_enableIRQ)
+                  000068d0    00000008             : ee_context.o (.text:EE_cortex_rx_enableIRQ)
+                  000068d8    00000008             : ee_startos.o (.text:EE_cortex_rx_enableIRQ)
+                  000068e0    00000008             : ee_system_timer.o (.text:EE_cortex_rx_enableIRQ)
+                  000068e8    00000008             : ee_as_timing_prot.o (.text:EE_hal_tp_get_current_time_and_pause)
+                  000068f0    00000008             : ee_shtdown.o (.text:EE_hal_tp_stop)
+                  000068f8    00000004             : ee_irqendin.o (.text:EE_IRQ_release_all_items)
+                  000068fc    00000004             : ee_as_schedule_tables.o (.text:EE_as_monitoring_the_stack)
+                  00006900    00000004             : ee_irqendin.o (.text:EE_oo_call_PostTaskHook)
+                  00006904    00000004             : ee_thendin.o (.text:EE_oo_call_PostTaskHook)
+                  00006908    00000004             : ee_startos.o (.text:EE_oo_call_StartupHook)
+                  0000690c    00000004             : ee_utils.o (.text:EE_system_init)
+                  00006910    00000004     code_as_impl.o (.text:FuncTask1)
+                  00006914    00000004     code_as_impl.o (.text:FuncTask2)
+                  00006918    00000004     code_as_impl.o (.text:FuncTask3)
+                  0000691c    00000004     code_as_impl.o (.text:FuncTask4)
+                  00006920    00000004     code_as_impl.o (.text:FuncTask5)
+                  00006924    00000004     code_as_impl.o (.text:FuncTask6)
+                  00006928    00000004     libee.a : sys_phantom.o (.text:phantomInterrupt)
+                  0000692c    00000004     rtsv7R4_A_be_v3D16_eabi.lib : startup.obj (.text)
+
+.const     0    00006930    000003fc     
+                  00006930    00000200     libee.a : sys_vim.o (.const:s_vim_init)
+                  00006b30    00000078     as_eecfg.o (.const:EE_as_Expiry_Point_ROM)
+                  00006ba8    00000078     as_eecfg.o (.const:EE_oo_action_ROM)
+                  00006c20    00000048     as_eecfg.o (.const:EE_as_Schedule_Table_ROM)
+                  00006c68    00000018     eecfg.o (.const:EE_oo_autostart_task_mode_OSDEFAULTAPPMODE)
+                  00006c80    00000018     as_eecfg.o (.const:EE_oo_counter_object_ROM)
+                  00006c98    00000018     eecfg.o (.const:EE_terminate_real_th_body)
+                  00006cb0    00000018     eecfg.o (.const:EE_th_dispatch_prio)
+                  00006cc8    00000018     eecfg.o (.const:EE_th_is_extended)
+                  00006ce0    00000018     eecfg.o (.const:EE_th_ready_prio)
+                  00006cf8    0000000c     as_eecfg.o (.const:EE_as_autostart_schedule_table_mode_OSDEFAULTAPPMODE)
+                  00006d04    0000000c     as_eecfg.o (.const:EE_counter_ROM)
+                  00006d10    00000008     as_eecfg.o (.const:EE_as_schedule_table_autostart)
+                  00006d18    00000008     eecfg.o (.const:EE_oo_autostart_task_data)
+                  00006d20    00000008     libee.a : ee_as_timing_prot.o (.const)
+                  00006d28    00000004             : ee_iparam.o (.const:EE_os_invalid_param)
+
+.cinit     0    00006d30    00000058     
+                  00006d30    00000033     (.cinit..data.load) [load image, compression = lzss]
+                  00006d63    00000001     --HOLE-- [fill = 0]
+                  00006d64    0000000c     (__TI_handler_table)
+                  00006d70    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00006d78    00000010     (__TI_cinit_table)
+
+.bss       0    08006000    00000165     UNINITIALIZED
+                  08006000    00000050     (.common:EE_as_tp_budget_confs)
+                  08006050    00000050     (.common:EE_as_tp_budget_data)
+                  080060a0    00000020     (.common:EE_oo_counter_object_RAM)
+                  080060c0    0000001c     (.common:EE_std_thread_tos)
+                  080060dc    00000018     (.common:EE_as_tp_RAM_refs)
+                  080060f4    00000018     (.common:EE_as_tp_ROM_refs)
+                  0800610c    00000018     (.common:EE_cortex_rx_system_tos)
+                  08006124    00000018     (.common:EE_terminate_data)
+                  0800613c    0000000c     (.common:EE_oo_ErrorHook_data)
+                  08006148    00000004     (.common:EE_ApplicationMode)
+                  0800614c    00000004     (.common:EE_ErrorHook_nested_flag)
+                  08006150    00000004     (.common:EE_IRQ_nesting_level)
+                  08006154    00000004     (.common:EE_cortex_rx_active_tos)
+                  08006158    00000004     (.common:EE_oo_IRQ_disable_count)
+                  0800615c    00000004     (.common:EE_oo_started)
+                  08006160    00000004     (.common:EE_std_endcycle_next_tid)
+                  08006164    00000001     (.common:EE_oo_ErrorHook_ServiceID)
+
+.data      0    08006168    00000120     UNINITIALIZED
+                  08006168    0000003c     as_eecfg.o (.data:EE_as_Schedule_Table_RAM)
+                  080061a4    00000018     eecfg.o (.data:EE_th_event_active)
+                  080061bc    00000018     eecfg.o (.data:EE_th_event_waitmask)
+                  080061d4    00000018     eecfg.o (.data:EE_th_next)
+                  080061ec    00000018     eecfg.o (.data:EE_th_rnact)
+                  08006204    00000018     eecfg.o (.data:EE_th_status)
+                  0800621c    00000018     eecfg.o (.data:EE_th_terminate_nextask)
+                  08006234    00000018     eecfg.o (.data:EE_th_waswaiting)
+                  0800624c    0000000c     rtsv7R4_A_be_v3D16_eabi.lib : exit.obj (.data:$O1$$)
+                  08006258    0000000c     libee.a : ee_as_timing_prot.o (.data:EE_as_tp_active)
+                  08006264    0000000c     eecfg.o (.data)
+                  08006270    00000008     rtsv7R4_A_be_v3D16_eabi.lib : _lock.obj (.data:$O1$$)
+                  08006278    00000008     as_eecfg.o (.data:EE_counter_RAM)
+                  08006280    00000004     libee.a : ee_as_timing_prot.o (.data)
+                  08006284    00000004             : ee_irqDispatch_c.o (.data)
+
+MODULE SUMMARY
+
+       Module                     code    ro data   rw data
+       ------                     ----    -------   -------
+    obj\
+       as_eecfg.o                 0       368       364    
+       code_as_impl.o             444     0         0      
+       eecfg.o                    0       128       208    
+    +--+--------------------------+-------+---------+---------+
+       Total:                     444     496       572    
+                                                           
+    obj\contrib\ti_tms570\source\
+       sys_intvecs.o              32      0         0      
+    +--+--------------------------+-------+---------+---------+
+       Total:                     32      0         0      
+                                                           
+    C:\ti\ccsv7\tools\compiler\TI-CGT~2.LTS\lib\rtsv7R4_A_be_v3D16_eabi.lib
+       memcpy32.obj               384     0         0      
+       memset32.obj               176     0         0      
+       autoinit.obj               168     0         0      
+       exit.obj                   144     0         12     
+       copy_decompress_lzss.obj   144     0         0      
+       cpy_tbl.obj                132     0         0      
+       _lock.obj                  36      0         8      
+       copy_decompress_none.obj   20      0         0      
+       copy_zero_init.obj         16      0         0      
+       startup.obj                4       0         0      
+    +--+--------------------------+-------+---------+---------+
+       Total:                     1224    0         20     
+                                                           
+    libee.a
+       sys_selftest.o             6864    0         0      
+       ee_altick.o                2620    0         0      
+       ee_as_timing_prot.o        2036    8         16     
+       ee_as_schedule_tables.o    1696    0         0      
+       sys_vim.o                  988     512       0      
+       pinmux.o                   1384    0         0      
+       ee_startos.o               1324    0         4      
+       ee_thendin.o               984     0         0      
+       system.o                   896     0         0      
+       ee_irqendin.o              860     0         0      
+       sys_core.o                 844     0         0      
+       sys_startup.o              636     0         0      
+       ee_irqDispatch_c.o         616     0         4      
+       esm.o                      620     0         0      
+       ee_system_timer.o          488     0         0      
+       ee_as_prot_error.o         312     0         0      
+       rti.o                      288     0         0      
+       ee_shtdown.o               260     0         0      
+       sys_pmu.o                  224     0         0      
+       ee_tnterm.o                204     0         0      
+       dabort.o                   188     0         0      
+       ee_rq_inser.o              188     0         0      
+       ee_ccs_multi_context.o     172     0         0      
+       ee_ccs_oo.o                140     0         0      
+       ee_rq_exchg.o              92      0         0      
+       ee_irqDispatch_asm.o       88      0         0      
+       ee_context.o               80      0         0      
+       ee_tstub.o                 68      0         0      
+       notification.o             60      0         0      
+       ee_lookup.o                0       0         21     
+       ee_hal_structs.o           0       0         8      
+       ee_iparam.o                0       4         0      
+       ee_utils.o                 4       0         0      
+       sys_phantom.o              4       0         0      
+    +--+--------------------------+-------+---------+---------+
+       Total:                     25228   524       53     
+                                                           
+       Linker Generated:          0       87        0      
+    +--+--------------------------+-------+---------+---------+
+       Grand Total:               26928   1107      645    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00006d78 records: 2, size/record: 8, table size: 16
+	.data: load addr=00006d30, load size=00000033 bytes, run addr=08006168, run size=00000120 bytes, compression=lzss
+	.bss: load addr=00006d70, load size=00000008 bytes, run addr=08006000, run size=00000165 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00006d64 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_lzss
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                           
+-------   ----                                           
+00004abc  C$$EXIT                                        
+00001724  C_irqDispatch                                  
+08006148  EE_ApplicationMode                             
+0800614c  EE_ErrorHook_nested_flag                       
+000039bc  EE_IRQ_end_instance                            
+00005b20  EE_IRQ_end_post_stub                           
+08006150  EE_IRQ_nesting_level                           
+00006b30  EE_as_Expiry_Point_ROM                         
+08006168  EE_as_Schedule_Table_RAM                       
+00006c20  EE_as_Schedule_Table_ROM                       
+00001db4  EE_as_StartScheduleTableAbs                    
+00001bc4  EE_as_StartScheduleTableRel                    
+000030a8  EE_as_handle_protection_error                  
+00006d10  EE_as_schedule_table_autostart                 
+080060dc  EE_as_tp_RAM_refs                              
+080060f4  EE_as_tp_ROM_refs                              
+08006258  EE_as_tp_active                                
+0000648c  EE_as_tp_active_pause_and_update_budgets_impl  
+00005990  EE_as_tp_active_set_from_TASK                  
+000055bc  EE_as_tp_active_start_idle                     
+00003a88  EE_as_tp_active_start_on_TASK_stacking         
+0000551c  EE_as_tp_active_update_budgets_and_restart_impl
+08006000  EE_as_tp_budget_confs                          
+08006050  EE_as_tp_budget_data                           
+000038e8  EE_as_tp_handle_interarrival                   
+08006154  EE_cortex_rx_active_tos                        
+000062e4  EE_cortex_rx_initialize_system_timer           
+0800610c  EE_cortex_rx_system_tos                        
+00005c70  EE_cortex_system_timer_handler                 
+08006278  EE_counter_RAM                                 
+00006d04  EE_counter_ROM                                 
+00004be8  EE_hal_terminate_savestk                       
+00004c30  EE_hal_terminate_task                          
+08006164  EE_oo_ErrorHook_ServiceID                      
+0800613c  EE_oo_ErrorHook_data                           
+08006158  EE_oo_IRQ_disable_count                        
+00005b58  EE_oo_IncrementCounterHardware                 
+00002138  EE_oo_IncrementCounterImplementation           
+00005dfc  EE_oo_ShutdownOS_internal                      
+000026e0  EE_oo_StartOS                                  
+00006ba8  EE_oo_action_ROM                               
+00006d18  EE_oo_autostart_task_data                      
+080060a0  EE_oo_counter_object_RAM                       
+00006c80  EE_oo_counter_object_ROM                       
+0000292c  EE_oo_counter_object_insert                    
+0800615c  EE_oo_started                                  
+000065b8  EE_oo_thread_stub                              
+00006d28  EE_os_invalid_param                            
+0000530c  EE_rq2stk_exchange                             
+0800626c  EE_rq_first                                    
+00003fe0  EE_rq_insert                                   
+000047a4  EE_std_change_context                          
+08006160  EE_std_endcycle_next_tid                       
+00005f44  EE_std_run_task_code                           
+080060c0  EE_std_thread_tos                              
+08006264  EE_stkfirst                                    
+08006268  EE_sys_ceiling                                 
+0000690c  EE_system_init                                 
+08006124  EE_terminate_data                              
+00006c98  EE_terminate_real_th_body                      
+00006cb0  EE_th_dispatch_prio                            
+080061a4  EE_th_event_active                             
+080061bc  EE_th_event_waitmask                           
+00006cc8  EE_th_is_extended                              
+080061d4  EE_th_next                                     
+00006ce0  EE_th_ready_prio                               
+080061ec  EE_th_rnact                                    
+08006204  EE_th_status                                   
+0800621c  EE_th_terminate_nextask                        
+08006234  EE_th_waswaiting                               
+00001f98  EE_thread_end_instance                         
+00005f6c  EE_thread_not_terminated                       
+000067a8  ErrorHook                                      
+00006910  FuncTask1                                      
+00006914  FuncTask2                                      
+00006918  FuncTask3                                      
+0000691c  FuncTask4                                      
+00006920  FuncTask5                                      
+00006924  FuncTask6                                      
+000067b8  ISR2_EE_cortex_system_timer_handler            
+00006874  ISR2_rtiCompare0Interrupt                      
+000065cc  ProtectionHook                                 
+UNDEFED   SHT$$INIT_ARRAY$$Base                          
+UNDEFED   SHT$$INIT_ARRAY$$Limit                         
+00006d78  __TI_CINIT_Base                                
+00006d88  __TI_CINIT_Limit                               
+00006d64  __TI_Handler_Table_Base                        
+00006d70  __TI_Handler_Table_Limit                       
+00000cc0  __TI_PINIT_Base                                
+00000cc4  __TI_PINIT_Limit                               
+000048ec  __TI_auto_init                                 
+0800624c  __TI_cleanup_ptr                               
+00004a2c  __TI_decompress_lzss                           
+000065e0  __TI_decompress_none                           
+08006250  __TI_dtors_ptr                                 
+08006254  __TI_enable_exit_profile_output                
+ffffffff  __TI_pprof_out_hndl                            
+ffffffff  __TI_prof_data_size                            
+ffffffff  __TI_prof_data_start                           
+00000000  __TI_static_base__                             
+000067c8  __TI_zero_init                                 
+00004590  __aeabi_memclr                                 
+00004590  __aeabi_memclr4                                
+00004590  __aeabi_memclr8                                
+000022c8  __aeabi_memcpy                                 
+000022c8  __aeabi_memcpy4                                
+000022c8  __aeabi_memcpy8                                
+00004594  __aeabi_memset                                 
+00004594  __aeabi_memset4                                
+00004594  __aeabi_memset8                                
+ffffffff  __binit__                                      
+ffffffff  __c_args__                                     
+000014a8  _c_int00                                       
+00000bd8  _coreClearAuxiliaryDataFault_                  
+00000bec  _coreClearAuxiliaryInstructionFault_           
+00000bb0  _coreClearDataFaultAddress_                    
+00000b88  _coreClearDataFault_                           
+00000bc4  _coreClearInstructionFaultAddress_             
+00000b9c  _coreClearInstructionFault_                    
+00000b1c  _coreDisableEventBusExport_                    
+00000b60  _coreDisableFlashEcc_                          
+00000b3c  _coreDisableRamEcc_                            
+00000b0c  _coreEnableEventBusExport_                     
+00000b4c  _coreEnableFlashEcc_                           
+00000b70  _coreEnableIrqVicOffset_                       
+00000b2c  _coreEnableRamEcc_                             
+00000af4  _coreEnableVfp_                                
+00000bd0  _coreGetAuxiliaryDataFault_                    
+00000be4  _coreGetAuxiliaryInstructionFault_             
+00000ba8  _coreGetDataFaultAddress_                      
+00000b80  _coreGetDataFault_                             
+00000bbc  _coreGetInstructionFaultAddress_               
+00000b94  _coreGetInstructionFault_                      
+0000097c  _coreInitRegisters_                            
+00000a88  _coreInitStackPointer_                         
+0000409c  _dabort                                        
+00000c00  _disable_FIQ_interrupt_                        
+00000c08  _disable_IRQ_interrupt_                        
+00000bf8  _disable_interrupt_                            
+00000c10  _enable_interrupt_                             
+00000ca0  _errata_CORTEXR4_57_                           
+00000cb0  _errata_CORTEXR4_66_                           
+00000c18  _esmCcmErrorsClear_                            
+00000ad4  _getCPSRValue_                                 
+00000adc  _gotoCPUIdle_                                  
+0000541c  _irqDispatch                                   
+08006270  _lock                                          
+00006160  _nop                                           
+000035d0  _pmuDisableCountersGlobal_                     
+000035c0  _pmuEnableCountersGlobal_                      
+0000362c  _pmuGetCycleCount_                             
+00003634  _pmuGetEventCount_                             
+00003640  _pmuGetOverflow_                               
+00003574  _pmuInit_                                      
+00003600  _pmuResetCounters_                             
+000035e0  _pmuResetCycleCounter_                         
+000035f0  _pmuResetEventCounters_                        
+00003620  _pmuSetCountEvent_                             
+00003610  _pmuStartCounters_                             
+00003618  _pmuStopCounters_                              
+00006154  _register_lock                                 
+00006148  _register_unlock                               
+0000692c  _system_post_cinit                             
+08006274  _unlock                                        
+00004ac4  abort                                          
+00004158  adc1ParityCheck                                
+00004210  adc2ParityCheck                                
+ffffffff  binit                                          
+00003654  can1ParityCheck                                
+00003730  can2ParityCheck                                
+0000380c  can3ParityCheck                                
+00000f94  checkRAMECC                                    
+000046ec  checkefcSelfTest                               
+00004d74  copy_in                                        
+000042c8  disableParity                                  
+00003c20  dmaParityCheck                                 
+00004b4c  efcCheck                                       
+00005c00  efcSelfTest                                    
+00003ce0  efcStuckZeroTest                               
+0000437c  enableParity                                   
+00000588  errata_PBIST_4                                 
+000067d8  esmGroup1Notification                          
+000067e8  esmGroup2Notification                          
+00002b60  esmHighInterrupt                               
+00002448  esmInit                                        
+00004ad0  exit                                           
+000044e0  het1ParityCheck                                
+000032ac  het2ParityCheck                                
+00003da0  htu1ParityCheck                                
+00003e60  htu2ParityCheck                                
+000065f4  main                                           
+000025a0  mapClocks                                      
+000022c8  memcpy                                         
+00005a64  memoryInit                                     
+00006300  memoryPort0TestFailNotification                
+000045a0  memset                                         
+00002d84  mibspi1ParityCheck                             
+00002e90  mibspi3ParityCheck                             
+00002f9c  mibspi5ParityCheck                             
+00000020  muxInit                                        
+00004e70  pbistFail                                      
+00005e28  pbistIsTestCompleted                           
+00005c38  pbistIsTestPassed                              
+00005368  pbistPortTestStatus                            
+0000348c  pbistRun                                       
+0000198c  pbistSelfCheck                                 
+00005ca4  pbistStop                                      
+000052a8  periphInit                                     
+00006928  phantomInterrupt                               
+00005cd8  rtiCompare0Interrupt                           
+00005d9c  rtiEnableNotification                          
+00004994  rtiGetCurrentTick                              
+00005f94  rtiSetPeriod                                   
+00005dcc  rtiStartCounter                                
+000067f8  selftestFailNotification                       
+000054c8  setupFlash                                     
+0000516c  setupPLL                                       
+00003b54  systemInit                                     
+0000556c  trimLPO                                        
+00002c74  vimInit                                        
+00003f20  vimParityCheck                                 
+00000cc8  vimParityErrorHandler                          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                           
+-------   ----                                           
+00000000  __TI_static_base__                             
+00000020  muxInit                                        
+00000588  errata_PBIST_4                                 
+0000097c  _coreInitRegisters_                            
+00000a88  _coreInitStackPointer_                         
+00000ad4  _getCPSRValue_                                 
+00000adc  _gotoCPUIdle_                                  
+00000af4  _coreEnableVfp_                                
+00000b0c  _coreEnableEventBusExport_                     
+00000b1c  _coreDisableEventBusExport_                    
+00000b2c  _coreEnableRamEcc_                             
+00000b3c  _coreDisableRamEcc_                            
+00000b4c  _coreEnableFlashEcc_                           
+00000b60  _coreDisableFlashEcc_                          
+00000b70  _coreEnableIrqVicOffset_                       
+00000b80  _coreGetDataFault_                             
+00000b88  _coreClearDataFault_                           
+00000b94  _coreGetInstructionFault_                      
+00000b9c  _coreClearInstructionFault_                    
+00000ba8  _coreGetDataFaultAddress_                      
+00000bb0  _coreClearDataFaultAddress_                    
+00000bbc  _coreGetInstructionFaultAddress_               
+00000bc4  _coreClearInstructionFaultAddress_             
+00000bd0  _coreGetAuxiliaryDataFault_                    
+00000bd8  _coreClearAuxiliaryDataFault_                  
+00000be4  _coreGetAuxiliaryInstructionFault_             
+00000bec  _coreClearAuxiliaryInstructionFault_           
+00000bf8  _disable_interrupt_                            
+00000c00  _disable_FIQ_interrupt_                        
+00000c08  _disable_IRQ_interrupt_                        
+00000c10  _enable_interrupt_                             
+00000c18  _esmCcmErrorsClear_                            
+00000ca0  _errata_CORTEXR4_57_                           
+00000cb0  _errata_CORTEXR4_66_                           
+00000cc0  __TI_PINIT_Base                                
+00000cc4  __TI_PINIT_Limit                               
+00000cc8  vimParityErrorHandler                          
+00000f94  checkRAMECC                                    
+000014a8  _c_int00                                       
+00001724  C_irqDispatch                                  
+0000198c  pbistSelfCheck                                 
+00001bc4  EE_as_StartScheduleTableRel                    
+00001db4  EE_as_StartScheduleTableAbs                    
+00001f98  EE_thread_end_instance                         
+00002138  EE_oo_IncrementCounterImplementation           
+000022c8  __aeabi_memcpy                                 
+000022c8  __aeabi_memcpy4                                
+000022c8  __aeabi_memcpy8                                
+000022c8  memcpy                                         
+00002448  esmInit                                        
+000025a0  mapClocks                                      
+000026e0  EE_oo_StartOS                                  
+0000292c  EE_oo_counter_object_insert                    
+00002b60  esmHighInterrupt                               
+00002c74  vimInit                                        
+00002d84  mibspi1ParityCheck                             
+00002e90  mibspi3ParityCheck                             
+00002f9c  mibspi5ParityCheck                             
+000030a8  EE_as_handle_protection_error                  
+000032ac  het2ParityCheck                                
+0000348c  pbistRun                                       
+00003574  _pmuInit_                                      
+000035c0  _pmuEnableCountersGlobal_                      
+000035d0  _pmuDisableCountersGlobal_                     
+000035e0  _pmuResetCycleCounter_                         
+000035f0  _pmuResetEventCounters_                        
+00003600  _pmuResetCounters_                             
+00003610  _pmuStartCounters_                             
+00003618  _pmuStopCounters_                              
+00003620  _pmuSetCountEvent_                             
+0000362c  _pmuGetCycleCount_                             
+00003634  _pmuGetEventCount_                             
+00003640  _pmuGetOverflow_                               
+00003654  can1ParityCheck                                
+00003730  can2ParityCheck                                
+0000380c  can3ParityCheck                                
+000038e8  EE_as_tp_handle_interarrival                   
+000039bc  EE_IRQ_end_instance                            
+00003a88  EE_as_tp_active_start_on_TASK_stacking         
+00003b54  systemInit                                     
+00003c20  dmaParityCheck                                 
+00003ce0  efcStuckZeroTest                               
+00003da0  htu1ParityCheck                                
+00003e60  htu2ParityCheck                                
+00003f20  vimParityCheck                                 
+00003fe0  EE_rq_insert                                   
+0000409c  _dabort                                        
+00004158  adc1ParityCheck                                
+00004210  adc2ParityCheck                                
+000042c8  disableParity                                  
+0000437c  enableParity                                   
+000044e0  het1ParityCheck                                
+00004590  __aeabi_memclr                                 
+00004590  __aeabi_memclr4                                
+00004590  __aeabi_memclr8                                
+00004594  __aeabi_memset                                 
+00004594  __aeabi_memset4                                
+00004594  __aeabi_memset8                                
+000045a0  memset                                         
+000046ec  checkefcSelfTest                               
+000047a4  EE_std_change_context                          
+000048ec  __TI_auto_init                                 
+00004994  rtiGetCurrentTick                              
+00004a2c  __TI_decompress_lzss                           
+00004abc  C$$EXIT                                        
+00004ac4  abort                                          
+00004ad0  exit                                           
+00004b4c  efcCheck                                       
+00004be8  EE_hal_terminate_savestk                       
+00004c30  EE_hal_terminate_task                          
+00004d74  copy_in                                        
+00004e70  pbistFail                                      
+0000516c  setupPLL                                       
+000052a8  periphInit                                     
+0000530c  EE_rq2stk_exchange                             
+00005368  pbistPortTestStatus                            
+0000541c  _irqDispatch                                   
+000054c8  setupFlash                                     
+0000551c  EE_as_tp_active_update_budgets_and_restart_impl
+0000556c  trimLPO                                        
+000055bc  EE_as_tp_active_start_idle                     
+00005990  EE_as_tp_active_set_from_TASK                  
+00005a64  memoryInit                                     
+00005b20  EE_IRQ_end_post_stub                           
+00005b58  EE_oo_IncrementCounterHardware                 
+00005c00  efcSelfTest                                    
+00005c38  pbistIsTestPassed                              
+00005c70  EE_cortex_system_timer_handler                 
+00005ca4  pbistStop                                      
+00005cd8  rtiCompare0Interrupt                           
+00005d9c  rtiEnableNotification                          
+00005dcc  rtiStartCounter                                
+00005dfc  EE_oo_ShutdownOS_internal                      
+00005e28  pbistIsTestCompleted                           
+00005f44  EE_std_run_task_code                           
+00005f6c  EE_thread_not_terminated                       
+00005f94  rtiSetPeriod                                   
+00006148  _register_unlock                               
+00006154  _register_lock                                 
+00006160  _nop                                           
+000062e4  EE_cortex_rx_initialize_system_timer           
+00006300  memoryPort0TestFailNotification                
+0000648c  EE_as_tp_active_pause_and_update_budgets_impl  
+000065b8  EE_oo_thread_stub                              
+000065cc  ProtectionHook                                 
+000065e0  __TI_decompress_none                           
+000065f4  main                                           
+000067a8  ErrorHook                                      
+000067b8  ISR2_EE_cortex_system_timer_handler            
+000067c8  __TI_zero_init                                 
+000067d8  esmGroup1Notification                          
+000067e8  esmGroup2Notification                          
+000067f8  selftestFailNotification                       
+00006874  ISR2_rtiCompare0Interrupt                      
+0000690c  EE_system_init                                 
+00006910  FuncTask1                                      
+00006914  FuncTask2                                      
+00006918  FuncTask3                                      
+0000691c  FuncTask4                                      
+00006920  FuncTask5                                      
+00006924  FuncTask6                                      
+00006928  phantomInterrupt                               
+0000692c  _system_post_cinit                             
+00006b30  EE_as_Expiry_Point_ROM                         
+00006ba8  EE_oo_action_ROM                               
+00006c20  EE_as_Schedule_Table_ROM                       
+00006c80  EE_oo_counter_object_ROM                       
+00006c98  EE_terminate_real_th_body                      
+00006cb0  EE_th_dispatch_prio                            
+00006cc8  EE_th_is_extended                              
+00006ce0  EE_th_ready_prio                               
+00006d04  EE_counter_ROM                                 
+00006d10  EE_as_schedule_table_autostart                 
+00006d18  EE_oo_autostart_task_data                      
+00006d28  EE_os_invalid_param                            
+00006d64  __TI_Handler_Table_Base                        
+00006d70  __TI_Handler_Table_Limit                       
+00006d78  __TI_CINIT_Base                                
+00006d88  __TI_CINIT_Limit                               
+08006000  EE_as_tp_budget_confs                          
+08006050  EE_as_tp_budget_data                           
+080060a0  EE_oo_counter_object_RAM                       
+080060c0  EE_std_thread_tos                              
+080060dc  EE_as_tp_RAM_refs                              
+080060f4  EE_as_tp_ROM_refs                              
+0800610c  EE_cortex_rx_system_tos                        
+08006124  EE_terminate_data                              
+0800613c  EE_oo_ErrorHook_data                           
+08006148  EE_ApplicationMode                             
+0800614c  EE_ErrorHook_nested_flag                       
+08006150  EE_IRQ_nesting_level                           
+08006154  EE_cortex_rx_active_tos                        
+08006158  EE_oo_IRQ_disable_count                        
+0800615c  EE_oo_started                                  
+08006160  EE_std_endcycle_next_tid                       
+08006164  EE_oo_ErrorHook_ServiceID                      
+08006168  EE_as_Schedule_Table_RAM                       
+080061a4  EE_th_event_active                             
+080061bc  EE_th_event_waitmask                           
+080061d4  EE_th_next                                     
+080061ec  EE_th_rnact                                    
+08006204  EE_th_status                                   
+0800621c  EE_th_terminate_nextask                        
+08006234  EE_th_waswaiting                               
+0800624c  __TI_cleanup_ptr                               
+08006250  __TI_dtors_ptr                                 
+08006254  __TI_enable_exit_profile_output                
+08006258  EE_as_tp_active                                
+08006264  EE_stkfirst                                    
+08006268  EE_sys_ceiling                                 
+0800626c  EE_rq_first                                    
+08006270  _lock                                          
+08006274  _unlock                                        
+08006278  EE_counter_RAM                                 
+ffffffff  __TI_pprof_out_hndl                            
+ffffffff  __TI_prof_data_size                            
+ffffffff  __TI_prof_data_start                           
+ffffffff  __binit__                                      
+ffffffff  __c_args__                                     
+ffffffff  binit                                          
+UNDEFED   SHT$$INIT_ARRAY$$Base                          
+UNDEFED   SHT$$INIT_ARRAY$$Limit                         
+
+[222 symbols]

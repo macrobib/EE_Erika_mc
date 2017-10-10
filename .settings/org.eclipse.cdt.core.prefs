@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/CCS_INSTALL_ROOT/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/CCS_INSTALL_ROOT/operation=replace
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/CCS_INSTALL_ROOT/value=${ccs_install_root}
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/CCS_ROOT/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/CCS_ROOT/operation=replace
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/CCS_ROOT/value=C\:\\ti\\ccsv7
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/EEBASE/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/EEBASE/operation=replace
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/EEBASE/value=C\:\\Users\\CHANDRASHEKARAN\\Documents\\source_repo\\litmus\\sample\\ee_files
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/PATH/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/PATH/operation=replace
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/PATH/value=C\:/ti/ccsv7/eclipse/jre/bin/client;C\:/ti/ccsv7/eclipse/jre/bin;C\:/ti/ccsv7/eclipse/jre/lib/i386;C\:\\ProgramData\\Oracle\\Java\\javapath;C\:\\Windows\\system32;C\:\\Windows;C\:\\Windows\\System32\\Wbem;C\:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C\:\\Program Files\\PuTTY\\;C\:\\Program Files\\nodejs\\;C\:\\Python3.6\\Scripts\\;C\:\\Python3.6\\;C\:\\Users\\CHANDRASHEKARAN\\AppData\\Local\\Microsoft\\WindowsApps;C\:\\Users\\CHANDRASHEKARAN\\AppData\\Local\\atom\\bin;C\:\\Users\\CHANDRASHEKARAN\\AppData\\Local\\GitHubDesktop\\bin;C\:\\Users\\CHANDRASHEKARAN\\AppData\\Roaming\\npm;C\:\\ti\\ccsv7\\eclipse;C\:\\ti\\ccsv7\\tools\\compiler\\ti-cgt-arm_16.9.4.LTS\\bin;C\:\\cygwin\\bin
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/append=true
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.101719874/appendContributed=true

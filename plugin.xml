@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="com.eu.evidence.rtdruid.oil.ee.core.eeSrc">
+      <sourceDistribution
+            VersionFile="ee_files/VERSION"
+            contribs="ee_files/contrib/"
+            erikaFiles="ee_files/">
+      </sourceDistribution>
+   </extension>
+<!--
+   <extension
+         point="com.eu.evidence.rtdruid.oil.core.oil_library_path">
+      <library_path
+            path="ee_base/oil_extensions/">
+      </library_path>
+   </extension>
+-->
+
+</plugin>
