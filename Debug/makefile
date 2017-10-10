@@ -59,7 +59,7 @@ endif
 else # ERIKA_FILES
 
 ifndef EEBASE
-        EEBASE := $(shell cygpath `cygpath -ms 'C:\Users\CHANDRASHEKARAN\Documents\source_repo\litmus\sample\ee_files'`)
+        EEBASE := $(shell cygpath `cygpath -ms '<PATH to erika ee_files>'`)
 else
         $(warning The usage of EEBASE is deprecated. Please use ERIKA_FILES)
 endif
